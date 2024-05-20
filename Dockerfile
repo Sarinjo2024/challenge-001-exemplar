@@ -28,6 +28,10 @@ ENV SRC=/src/
 ENV OUT=/out/
 ENV WORK=/work/
 
+RUN ls -l $BINS
+RUN echo "Running setup.sh from $BINS"
+RUN $BINS/setup.sh
+
 # Install necessary dependencies for the image
 COPY exemplar_only/patches/setup.sh $BINS/setup.sh
 RUN $BINS/setup.sh
